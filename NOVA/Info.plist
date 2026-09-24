@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key><string>NOVA</string>
+    <key>CFBundleName</key><string>NOVA</string>
+    <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>ITSAppUsesNonExemptEncryption</key><false/>
+    <key>UILaunchScreen</key><dict><key>UIColorName</key><string>LaunchBackground</string></dict>
+    <key>UIStatusBarStyle</key><string>UIStatusBarStyleLightContent</string>
+    <key>UIViewControllerBasedStatusBarAppearance</key><true/>
+    <key>NSMicrophoneUsageDescription</key><string>NOVA использует микрофон для записи голосовых сообщений.</string>
+    <key>NSCameraUsageDescription</key><string>NOVA использует камеру для отправки фото и видео.</string>
+    <key>NSPhotoLibraryUsageDescription</key><string>NOVA использует медиатеку для выбора фото и видео для отправки в чат.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key><string>NOVA может сохранять выбранные медиафайлы на устройство.</string>
+    <key>UIBackgroundModes</key>
+    <array><string>remote-notification</string></array>
+    <key>NSAppTransportSecurity</key>
+    <dict><key>NSAllowsArbitraryLoads</key><false/></dict>
+</dict>
+</plist>

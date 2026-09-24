@@ -1,0 +1,55 @@
+name: NOVA-iOS
+options:
+  bundleIdPrefix: com.nova
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "26.0"
+  createIntermediateGroups: true
+
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    from: 12.19.2
+
+targets:
+  NOVA:
+    type: application
+    platform: iOS
+    sources:
+      - path: NOVA
+        excludes:
+          - Resources
+    resources:
+      - path: NOVA/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.nova.messenger
+        PRODUCT_NAME: NOVA
+        CURRENT_PROJECT_VERSION: 2
+        MARKETING_VERSION: 1.0.1
+        SWIFT_VERSION: 6.0
+        IPHONEOS_DEPLOYMENT_TARGET: 15.0
+        INFOPLIST_FILE: NOVA/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        VERSIONING_SYSTEM: apple-generic
+      configs:
+        Debug:
+          CODE_SIGN_ENTITLEMENTS: NOVA/NOVA.Debug.entitlements
+          DEBUG_INFORMATION_FORMAT: dwarf
+        Release:
+          CODE_SIGN_ENTITLEMENTS: NOVA/NOVA.Release.entitlements
+          DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+          VALIDATE_PRODUCT: YES
+    attributes:
+      SystemCapabilities:
+        com.apple.Push:
+          enabled: 1
+    dependencies:
+      - package: Firebase
+        product: FirebaseCore
+      - package: Firebase
+        product: FirebaseMessaging
+    scheme:
+      testTargets: []

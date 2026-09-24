@@ -1,0 +1,35 @@
+name: Validate NOVA iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Xcode version
+        run: xcodebuild -version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate icons
+        run: python3 scripts/generate_icons.py
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Build iOS Simulator
+        run: |
+          xcodebuild \
+            -project NOVA-iOS.xcodeproj \
+            -scheme NOVA \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build

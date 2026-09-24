@@ -1,0 +1,7 @@
+.DS_Store
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+NOVA-iOS.xcodeproj/
+NOVA/Resources/GoogleService-Info.plist

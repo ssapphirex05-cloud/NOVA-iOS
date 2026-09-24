@@ -1,0 +1,3 @@
+Для FCM на iPhone скачай настоящий GoogleService-Info.plist из Firebase Console
+для iOS app с Bundle ID com.nova.messenger и положи его рядом с этим файлом.
+Сам настоящий plist не публикуй в открытом репозитории, если не хочешь хранить Firebase-конфигурацию публично.
